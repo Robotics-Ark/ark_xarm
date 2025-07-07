@@ -9,16 +9,16 @@ from ark.client.comm_infrastructure.base_node import main
 from ark.system.component.robot import Robot, robot_control
 from ark.system.driver.robot_driver import RobotDriver
 # from ark.system.pybullet.pybullet_robot_driver import BulletRobotDriver
-from kuka_pybullet_driver import KukaPyBulletDriver
+from xarm_pybullet_driver import XarmPyBulletDriver
 from ark.tools.log import log
 from arktypes import flag_t, joint_group_command_t, joint_state_t, task_space_command_t
 from arktypes.utils import unpack, pack
 
 @dataclass
-class Drivers(Enum): 
-    PYBULLET_DRIVER = KukaPyBulletDriver
+class Drivers(Enum):
+    PYBULLET_DRIVER = XarmPyBulletDriver
 
-class KukaLWR(Robot):
+class Xarm(Robot):
     def __init__(self,
                  name: str,   
                  global_config: Dict[str, Any] = None,
@@ -131,6 +131,6 @@ class KukaLWR(Robot):
 
     #####################################################
 
-CONFIG_PATH = "kuka.yaml"
+CONFIG_PATH = "xarm.yaml"
 if __name__ == "__main__":
     raise NotImplementedError("This robot is not meant to be run as a standalone node. Please use the ark simulator")

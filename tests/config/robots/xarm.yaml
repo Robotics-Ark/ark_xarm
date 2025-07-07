@@ -1,0 +1,46 @@
+name: "Xarm"
+config:
+  source: "urdf"
+  urdf_path: "../../xarm/meshes/xarm6_robot.urdf"
+  class_dir: "../../xarm"
+  frequency: 240 # default is 240Hz
+  base_position:
+    - 0
+    - 0
+    - 0.2
+  base_orientation: # x, y, z, w
+    - 0
+    - 0
+    - 0
+    - 1
+  use_fixed_base: true
+  initial_configuration: 
+    - 0.0
+    - -0.785398
+    - 0.0
+    - -2.35619
+    - 0.0
+    - 1.5708
+    - 0.785398
+  ee_index: 6
+  joint_groups: 
+    arm: 
+      control_mode: "position"
+      joints: 
+        - "xarm_arm_0_joint"
+        - "xarm_arm_1_joint"
+        - "xarm_arm_2_joint"
+        - "xarm_arm_3_joint"
+        - "xarm_arm_4_joint"
+        - "xarm_arm_5_joint"
+        - "xarm_arm_6_joint"
+    all: 
+      control_mode: "position"
+      joints: 
+        - "xarm_arm_0_joint"
+        - "xarm_arm_1_joint"
+        - "xarm_arm_2_joint"
+        - "xarm_arm_3_joint"
+        - "xarm_arm_4_joint"
+        - "xarm_arm_5_joint"
+        - "xarm_arm_6_joint"
