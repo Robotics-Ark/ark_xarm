@@ -1,6 +1,6 @@
 
 simulator:
-  name: "kuka_simulator"                      # name of the node for ark graph
+  name: "xarm_simulator"                      # name of the node for ark graph
   backend_type: "pybullet"                      # type of the backend
   node_frequency: 240                           # node frequency in Hz (default 240)
   config:                                       # simulator-specific
@@ -29,4 +29,4 @@ simulator:
       far_plane: 100.0                        # far plane distance
 
 robots:
-  - "robots/kuka.yaml"
+  - "robots/xarm.yaml"
