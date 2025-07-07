@@ -1,6 +1,6 @@
 from ark.system.pybullet.pybullet_robot_driver import BulletRobotDriver
 
-class KukaPyBulletDriver(BulletRobotDriver):
+class XarmPyBulletDriver(BulletRobotDriver):
 
     def __init__(self, component_name: str, component_config: dict[str, any] = None, client: bool = True) -> None:
         super().__init__(component_name, component_config, client)
