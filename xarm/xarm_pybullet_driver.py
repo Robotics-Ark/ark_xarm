@@ -18,9 +18,10 @@ class XarmPyBulletDriver(BulletRobotDriver):
         if not (len(position) == 3 and len(quaternion) == 4):
             raise ValueError("Position must be 3 elements and quaternion must be 4 elements.")
 
-        end_effector_idx = kwargs.get("end_effector_idx")
+        end_effector_idx = 5
 
         # Compute IK solution
+        print(f"Computing inverse kinematics for end effector index: {end_effector_idx}")
         joint_angles = self.client.calculateInverseKinematics(
             bodyUniqueId=self.ref_body_id,
             endEffectorLinkIndex=end_effector_idx,
@@ -33,7 +34,7 @@ class XarmPyBulletDriver(BulletRobotDriver):
         
         self.client.setJointMotorControlArray(
             bodyUniqueId=self.ref_body_id,
-            jointIndices=list(range(7)),  # Assuming 7 joints
+            jointIndices=list(range(6)),  # Assuming 7 joints
             controlMode=self.client.POSITION_CONTROL,
             targetPositions=joint_angles
         )
